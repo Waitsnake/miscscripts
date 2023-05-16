@@ -156,6 +156,8 @@ var PixelateHelper = {
                     this.canvas.style[style] = styles[style]
                 }
             }
+            this.canvas.style.width = this.displayWidth + "px";
+            this.canvas.style.height = this.displayHeight + "px";
             this.canvas.classList = this.classList;
             for (var option in this.dataset) {
                 if (this.dataset.hasOwnProperty(option)) {

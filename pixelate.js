@@ -132,8 +132,8 @@ var PixelateHelper = {
                 console.error("this.displayWidth = ", this.displayWidth)
             }
             this.canvasCrop = document.createElement("canvas");
-            this.canvasCrop.width = this.displayWidth;
-            this.canvasCrop.height = this.displayHeight;
+            this.canvasCrop.width = this.displayWidth * ratio;
+            this.canvasCrop.height = this.displayHeight * ratio;
             this.canvasCrop.style.display = "none";
             this.canvasCrop.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
             this.contextCrop = this
@@ -146,8 +146,8 @@ var PixelateHelper = {
                 .parentNode
                 .insertBefore(this.canvasCrop, this);
             this.canvas = document.createElement("canvas");
-            this.canvas.width = this.displayWidth;
-            this.canvas.height = this.displayHeight;
+            this.canvas.width = this.displayWidth * ratio;
+            this.canvas.height = this.displayHeight * ratio;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);

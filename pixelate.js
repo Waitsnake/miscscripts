@@ -132,8 +132,8 @@ var PixelateHelper = {
                 console.error("this.displayWidth = ", this.displayWidth)
             }
             this.canvasCrop = document.createElement("canvas");
-            this.canvasCrop.width = this.displayWidth * this.ratio;
-            this.canvasCrop.height = this.displayHeight * this.ratio;
+            this.canvasCrop.width = this.displayWidth;
+            this.canvasCrop.height = this.displayHeight;
             this.canvasCrop.style.display = "none";
             this.canvasCrop.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
             this.contextCrop = this

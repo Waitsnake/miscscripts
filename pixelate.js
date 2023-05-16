@@ -164,7 +164,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-            this.canvas.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
+//            this.canvas.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
             this.context = this
                 .canvas
                 .getContext("2d");

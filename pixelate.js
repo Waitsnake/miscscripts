@@ -1,15 +1,4 @@
 "use strict";
-var PIXEL_RATIO = (function () {
-    var ctx = document.createElement("canvas").getContext("2d"),
-        dpr = window.devicePixelRatio || 1,
-        bsr = ctx.webkitBackingStorePixelRatio ||
-              ctx.mozBackingStorePixelRatio ||
-              ctx.msBackingStorePixelRatio ||
-              ctx.oBackingStorePixelRatio ||
-              ctx.backingStorePixelRatio || 1;
-
-    return dpr / bsr;
-})();
 var PixelateHelper = {
     ready: function(fn) {
         if (document.readyState != "loading") {
@@ -156,7 +145,6 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-//            this.canvas.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
             this.context = this.canvas.getContext("2d");
             this.context.mozImageSmoothingEnabled = false;
             this.context.webkitImageSmoothingEnabled = false;

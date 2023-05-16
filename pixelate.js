@@ -123,7 +123,7 @@ var PixelateHelper = {
             }
         };
         this.prepare = function () {
-            var ratio = PIXEL_RATIO;
+            this.ratio = PIXEL_RATIO;
             this.computedWidth = getComputedStyle(this).width;
             this.computedHeight = getComputedStyle(this).height;
             this.displayWidth = parseFloat(this.computedWidth.split("px")[0]);
@@ -132,10 +132,10 @@ var PixelateHelper = {
                 console.error("this.displayWidth = ", this.displayWidth)
             }
             this.canvasCrop = document.createElement("canvas");
-            this.canvasCrop.width = this.displayWidth * ratio;
-            this.canvasCrop.height = this.displayHeight * ratio;
+            this.canvasCrop.width = this.displayWidth * this.ratio;
+            this.canvasCrop.height = this.displayHeight * this.ratio;
             this.canvasCrop.style.display = "none";
-            this.canvasCrop.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
+            this.canvasCrop.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
             this.contextCrop = this
                 .canvasCrop
                 .getContext("2d");
@@ -146,8 +146,8 @@ var PixelateHelper = {
                 .parentNode
                 .insertBefore(this.canvasCrop, this);
             this.canvas = document.createElement("canvas");
-            this.canvas.width = this.displayWidth * ratio;
-            this.canvas.height = this.displayHeight * ratio;
+            this.canvas.width = this.displayWidth * this.ratio;
+            this.canvas.height = this.displayHeight * this.ratio;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);
@@ -164,7 +164,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-            this.canvas.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
+            this.canvas.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
             this.context = this
                 .canvas
                 .getContext("2d");

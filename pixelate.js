@@ -139,8 +139,8 @@ var PixelateHelper = {
             this.parentNode.insertBefore(this.canvasCrop, this);
             ratio = PIXEL_RATIO;
             this.canvas = document.createElement("canvas");
-            this.canvas.width = this.displayWidth * ratio;
-            this.canvas.height = this.displayHeight * ratio;
+            this.canvas.width = this.displayWidth;
+            this.canvas.height = this.displayHeight;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);
@@ -156,7 +156,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-            this.canvas.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
+//            this.canvas.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
             this.context = this.canvas.getContext("2d");
             this.context.mozImageSmoothingEnabled = false;
             this.context.webkitImageSmoothingEnabled = false;

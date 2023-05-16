@@ -135,7 +135,7 @@ var PixelateHelper = {
             this.canvasCrop.width = this.displayWidth;
             this.canvasCrop.height = this.displayHeight;
             this.canvasCrop.style.display = "none";
-//            this.canvasCrop.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
+            this.canvasCrop.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
             this.contextCrop = this
                 .canvasCrop
                 .getContext("2d");
@@ -164,7 +164,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
- //           this.canvas.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
+            this.canvas.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
             this.context = this
                 .canvas
                 .getContext("2d");

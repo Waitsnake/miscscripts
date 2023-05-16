@@ -7,7 +7,6 @@ var PIXEL_RATIO = (function () {
               ctx.msBackingStorePixelRatio ||
               ctx.oBackingStorePixelRatio ||
               ctx.backingStorePixelRatio || 1;
-
     return dpr / bsr;
 })();
 var PixelateHelper = {
@@ -164,6 +163,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
+            this.canvas.getContext("2d").setTransform(ratio, 0, 0, ratio, 0, 0);
             this.context = this
                 .canvas
                 .getContext("2d");

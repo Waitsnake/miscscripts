@@ -1,14 +1,4 @@
 "use strict";
-var PIXEL_RATIO = (function () {
-    var ctx = document.createElement("canvas").getContext("2d"),
-        dpr = window.devicePixelRatio || 1,
-        bsr = ctx.webkitBackingStorePixelRatio ||
-              ctx.mozBackingStorePixelRatio ||
-              ctx.msBackingStorePixelRatio ||
-              ctx.oBackingStorePixelRatio ||
-              ctx.backingStorePixelRatio || 1;
-    return dpr / bsr;
-})();
 var PixelateHelper = {
     ready: function (fn) {
         if (document.readyState != "loading") {
@@ -123,7 +113,7 @@ var PixelateHelper = {
             }
         };
         this.prepare = function () {
-            this.ratio = PIXEL_RATIO;
+            this.ratio = window.devicePixelRatio;
             this.computedWidth = getComputedStyle(this).width;
             this.computedHeight = getComputedStyle(this).height;
             this.displayWidth = parseFloat(this.computedWidth.split("px")[0]);
@@ -137,7 +127,7 @@ var PixelateHelper = {
             this.canvasCrop.style.width = this.displayWidth + "px";
             this.canvasCrop.style.height = this.displayHeight + "px";
             this.canvasCrop.style.display = "none";
-            this.canvasCrop.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
+            this.canvasCrop.getContext("2d").scale(this.ratio, this.ratio);
             this.contextCrop = this
                 .canvasCrop
                 .getContext("2d");
@@ -168,7 +158,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-            this.canvas.getContext("2d").setTransform(this.ratio, 0, 0, this.ratio, 0, 0);
+            this.canvas.getContext("2d").scale(this.ratio, this.ratio);
             this.context = this
                 .canvas
                 .getContext("2d");

@@ -146,8 +146,8 @@ var PixelateHelper = {
                 .parentNode
                 .insertBefore(this.canvasCrop, this);
             this.canvas = document.createElement("canvas");
-            this.canvas.width = this.displayWidth * this.ratio;
-            this.canvas.height = this.displayHeight * this.ratio;
+            this.canvas.width = this.displayWidth;
+            this.canvas.height = this.displayHeight;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);

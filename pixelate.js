@@ -129,7 +129,7 @@ var PixelateHelper = {
             this.canvasCrop.style.width = this.displayWidth + "px";
             this.canvasCrop.style.height = this.displayHeight + "px";
             this.canvasCrop.style.display = "none";
-            this.canvasCrop.getContext("2d").scale(this.ratio, this.ratio);
+            this.canvasCrop.getContext("2d").scale(1/this.ratio, 1/this.ratio);
             this.contextCrop = this
                 .canvasCrop
                 .getContext("2d");
@@ -162,7 +162,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-            this.canvas.getContext("2d").scale(this.ratio, this.ratio);
+            this.canvas.getContext("2d").scale(1/this.ratio, 1/this.ratio);
             this.context = this
                 .canvas
                 .getContext("2d");

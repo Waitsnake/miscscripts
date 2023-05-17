@@ -113,7 +113,7 @@ var PixelateHelper = {
             }
         };
         this.prepare = function () {
-//            this.ratio = window.devicePixelRatio;
+            this.ratio = window.devicePixelRatio;
             this.computedWidth = getComputedStyle(this).width;
             this.computedHeight = getComputedStyle(this).height;
             this.displayWidth = parseFloat(this.computedWidth.split("px")[0]);

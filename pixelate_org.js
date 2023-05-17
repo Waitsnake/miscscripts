@@ -113,7 +113,6 @@ var PixelateHelper = {
             }
         };
         this.prepare = function () {
-//            this.ratio = window.devicePixelRatio;
             this.computedWidth = getComputedStyle(this).width;
             this.computedHeight = getComputedStyle(this).height;
             this.displayWidth = parseFloat(this.computedWidth.split("px")[0]);
@@ -124,12 +123,7 @@ var PixelateHelper = {
             this.canvasCrop = document.createElement("canvas");
             this.canvasCrop.width = this.displayWidth;
             this.canvasCrop.height = this.displayHeight;
-//            this.canvasCrop.width = this.displayWidth * this.ratio;
-//            this.canvasCrop.height = this.displayHeight * this.ratio;
-//            this.canvasCrop.style.width = this.displayWidth + "px";
-//            this.canvasCrop.style.height = this.displayHeight + "px";
             this.canvasCrop.style.display = "none";
-//            this.canvasCrop.getContext("2d").scale(this.ratio, this.ratio);
             this.contextCrop = this
                 .canvasCrop
                 .getContext("2d");
@@ -142,8 +136,6 @@ var PixelateHelper = {
             this.canvas = document.createElement("canvas");
             this.canvas.width = this.displayWidth;
             this.canvas.height = this.displayHeight;
-//            this.canvas.width = this.displayWidth * this.ratio;
-//            this.canvas.height = this.displayHeight * this.ratio;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);
@@ -152,8 +144,6 @@ var PixelateHelper = {
                     this.canvas.style[style] = styles[style]
                 }
             }
-//            this.canvas.style.width = this.displayWidth + "px";
-//            this.canvas.style.height = this.displayHeight + "px";
             this.canvas.classList = this.classList;
             for (var option in this.dataset) {
                 if (this.dataset.hasOwnProperty(option)) {
@@ -162,7 +152,6 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-//            this.canvas.getContext("2d").scale(this.ratio, this.ratio);
             this.context = this
                 .canvas
                 .getContext("2d");

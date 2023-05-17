@@ -140,10 +140,10 @@ var PixelateHelper = {
                 .parentNode
                 .insertBefore(this.canvasCrop, this);
             this.canvas = document.createElement("canvas");
-//            this.canvas.width = this.displayWidth;
-//            this.canvas.height = this.displayHeight;
-            this.canvas.width = this.displayWidth * this.ratio;
-            this.canvas.height = this.displayHeight * this.ratio;
+            this.canvas.width = this.displayWidth;
+            this.canvas.height = this.displayHeight;
+//            this.canvas.width = this.displayWidth * this.ratio;
+//            this.canvas.height = this.displayHeight * this.ratio;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);
@@ -152,8 +152,8 @@ var PixelateHelper = {
                     this.canvas.style[style] = styles[style]
                 }
             }
-            this.canvas.style.width = this.canvas.style.width + "px";
-            this.canvas.style.height = this.canvas.style.height + "px";
+//            this.canvas.style.width = this.canvas.style.width + "px";
+//            this.canvas.style.height = this.canvas.style.height + "px";
             this.canvas.classList = this.classList;
             for (var option in this.dataset) {
                 if (this.dataset.hasOwnProperty(option)) {
@@ -162,7 +162,7 @@ var PixelateHelper = {
                     this.canvas.dataset[option] = this.dataset[option]
                 }
             }
-            this.canvas.getContext("2d").scale(this.ratio, this.ratio);
+//            this.canvas.getContext("2d").scale(this.ratio, this.ratio);
             this.context = this
                 .canvas
                 .getContext("2d");

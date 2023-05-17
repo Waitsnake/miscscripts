@@ -122,10 +122,10 @@ var PixelateHelper = {
                 console.error("this.displayWidth = ", this.displayWidth)
             }
             this.canvasCrop = document.createElement("canvas");
-            this.canvasCrop.width = this.displayWidth;
-            this.canvasCrop.height = this.displayHeight;
-//            this.canvasCrop.width = this.displayWidth * this.ratio;
-//            this.canvasCrop.height = this.displayHeight * this.ratio;
+//            this.canvasCrop.width = this.displayWidth;
+//            this.canvasCrop.height = this.displayHeight;
+            this.canvasCrop.width = this.displayWidth * this.ratio;
+            this.canvasCrop.height = this.displayHeight * this.ratio;
             this.canvasCrop.style.width = this.displayWidth + "px";
             this.canvasCrop.style.height = this.displayHeight + "px";
             this.canvasCrop.style.display = "none";
@@ -140,10 +140,10 @@ var PixelateHelper = {
                 .parentNode
                 .insertBefore(this.canvasCrop, this);
             this.canvas = document.createElement("canvas");
-            this.canvas.width = this.displayWidth;
-            this.canvas.height = this.displayHeight;
-//            this.canvas.width = this.displayWidth * this.ratio;
-//            this.canvas.height = this.displayHeight * this.ratio;
+//            this.canvas.width = this.displayWidth;
+//            this.canvas.height = this.displayHeight;
+            this.canvas.width = this.displayWidth * this.ratio;
+            this.canvas.height = this.displayHeight * this.ratio;
             this.canvas.style = this.style;
             this.canvas.style.height = "auto";
             var styles = PixelateHelper.getCSS(this);

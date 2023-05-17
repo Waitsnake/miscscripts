@@ -129,7 +129,7 @@ var PixelateHelper = {
             this.canvasCrop.style.width = this.displayWidth + "px";
             this.canvasCrop.style.height = this.displayHeight + "px";
             this.canvasCrop.style.display = "none";
-            this.canvasCrop.getContext("2d").scale(1/(this.ratio*2), 1/(this.ratio));
+            this.canvasCrop.getContext("2d").scale(1/(this.ratio*2), 1/(this.ratio*2));
             this.contextCrop = this
                 .canvasCrop
                 .getContext("2d");
